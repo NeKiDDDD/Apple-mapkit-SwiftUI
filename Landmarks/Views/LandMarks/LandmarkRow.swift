@@ -20,14 +20,22 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
 
-#Preview {
-    Group {
-        LandmarkRow(landmark: landmarks[0])
-        LandmarkRow(landmark: landmarks[1])
-    }
-    .previewLayout(.fixed(width: 300, height: 70))
-}
+//#Preview {
+//    
+//    var landmarks = ModelData().landmarks
+//    
+//    Group {
+//        LandmarkRow(landmark: landmarks[0])
+//        LandmarkRow(landmark: landmarks[1])
+//    }
+//    .previewLayout(.fixed(width: 300, height: 70))
+//}
